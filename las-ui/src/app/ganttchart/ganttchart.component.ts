@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
+import {Task} from '../task';
+import {Taskdetails} from '../taskdet';
+
 declare const mainapp: any;
 declare const startapp: any;
 @Component({
@@ -9,11 +12,11 @@ declare const startapp: any;
   styleUrls: ['./ganttchart.component.css']
 })
 export class GanttchartComponent implements OnInit {
-
+  public tasks=Taskdetails;
   gantttitle = 'GanttChart'
   private data;
   constructor(private httpClient: HttpClient) { }
-
+  selectedTask: Task;
   ngOnInit() {
 
     var HttpClient = function () {
@@ -43,6 +46,16 @@ export class GanttchartComponent implements OnInit {
         // metrics: {type: "quarterly", months: ['January 2017','February 2017','March 2017', 'April 2017', 'May 2017', 'June 2017']}, // For quarterly or half yearly data
         onClick: function (data) {
           console.log("Clicked on tab");
+          console.log(data);
+          
+          for (let task of Taskdetails)
+          {
+            if (data.id==task.id)
+            {
+              this.selectedTask=task;
+              console.log(this.selectedTask.title)
+            }
+          }
         },
         onEmptyButtonClick: function () {
           console.log("Empty Clicked");

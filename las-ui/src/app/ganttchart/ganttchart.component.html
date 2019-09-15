@@ -1,10 +1,30 @@
+<div class="col-container">
 
-<h1>{{gantttitle}}</h1>
-<p>ganttchart works!</p>
+    <div class="col">
+        <p>Left column</p>
+        <div class="card">
+            <p>placeholder for gantt chart</p>
+            <div class="chart" id="Chart" style="width: 100%">
+            </div>
 
-<div class="chart" id="Chart" style="width: 100%">
-    <script>
-        $(function () { CreateChart(); })
-    </script>
-<p>done</p>
+        </div>
+        <div class="col">
+            <p>Right column</p>
+            <div class="card">
+                <div *ngIf="selectedTask">
+                    <p>placeholder for tabs</p>
+                    <h2>{{selectedTask.title | uppercase}} Details</h2>
+                    <div><span>id: </span>{{selectedTask.id}}</div>
+                    <div>
+                        <label>name:
+                            <input [(ngModel)]="selectedTask.title" placeholder="name" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
