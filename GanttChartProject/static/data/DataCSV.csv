@@ -1,0 +1,18 @@
+﻿Resource ID,Resource Type,,Resource Property__capacity,,Resource Property__Module weight (metric ton), Resource Property__Length (m),,Resource Property__Breadth (m),,Resource Property__Height (m),,Resource Property__Maximum unsupported height(m),,Resource Property__Maximum reach (m),,Resource Property__Maximum lifting power (metric tons),,Resource Property__Counter weights (metric tons),Assignment Start,Assignment End
+Cr1,Crane,Maximum unsupported height(m):80 Maximum reach (m):70 Maximum lifting power (metric tons):18 Counter weights (metric tons):16.3,,,,,,,,,,,,
+Cr2,Crane,Maximum unsupported height(m):80 Maximum reach (m):50 Maximum lifting power (metric tons):15 Counter weights (metric tons):12.3,,,,,,,,,,,,
+Cr3,Crane,aximum unsupported height(m):80 Maximum reach (m):40 Maximum lifting power (metric tons):20 Counter weights (metric tons):17.6,,
+M1,Module,Module weight (metric ton): 19 Length (m):3 Breadth (m):3 Height (m):3
+M2,Module,Module weight (metric ton) :16 Length (m):4 Breadth (m):4 Height (m):5
+M3,Module,Module weight (metric ton) :19 Length (m):3 Breadth (m):2 Height (m):5
+M4,Module,Module weight (metric ton) :17 Length (m):4 Breadth (m):2 Height (m):6
+M5,Module,Module weight (metric ton) :16 Length (m):3 Breadth (m):2 Height (m):5
+M6,Module,Module weight (metric ton) :15 Length (m):2 Breadth (m):2 Height (m):4
+M7,Module,Module weight (metric ton) :17 Length (m):3 Breadth (m):4 Height (m):6
+M8,Module,Module weight (metric ton) :13 Length (m):2 Breadth (m):2 Height (m):5
+M9,Module,Module weight (metric ton):16 Length (m):4 Breadth (m):5 Height (m):6
+M10,Module,Module weight (metric ton):16 Length (m):3 Breadth (m):3 Height (m):5
+M11,Module,Module weight (metric ton):13 Length (m):6 Breadth (m):3 Height (m):5
+M12,Module,Module weight (metric ton):17 Length (m):7 Breadth (m):3 Height (m) :3
+LD1,Laydown Area,Capacity :5
+LD2,Laydown Area,Capacity :3

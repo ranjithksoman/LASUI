@@ -1,0 +1,34 @@
+[
+    {
+      "ConstraintID": "C1",
+      "Constraint_Type": "Logical"
+    },
+    {
+      "ConstraintID": "C2",
+      "Constraint_Type": "Logical"
+    },
+    {
+      "ConstraintID": "C3",
+      "Constraint_Type": "Disjunctive"
+    },
+    {
+      "ConstraintID": "C4",
+      "Constraint_Type": "Discrete"
+    },
+    {
+      "ConstraintID": "C5",
+      "Constraint_Type": "Discrete"
+    },
+    {
+      "ConstraintID": "C6",
+      "Constraint_Type": "Precedence"
+    },
+    {
+      "ConstraintID": "C7",
+      "Constraint_Type": "Precedence"
+    },
+    {
+      "ConstraintID": "C8",
+      "Constraint_Type": "Precedence"
+    }
+  ]

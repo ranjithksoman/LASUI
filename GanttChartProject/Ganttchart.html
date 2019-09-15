@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/style4_GCpage.css">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/style1.css">
+    <link rel="stylesheet" href="/static/CSS/jquery-ui.css">
+    <link rel="stylesheet" href="/static/CSS/style.css">
+    <link rel="stylesheet" href="/static/CSS/style3.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script type="text/javascript" src="/static/JavaScript/AddResource.js"></script>
+    <script type="text/javascript" src="/static/JavaScript/OnClick.js"></script>
+    <script type="text/javascript" src="/static/JavaScript/ganttChart.js"></script>
+    <script type="text/javascript" src="/static/JavaScript/main_app.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Automated Look Ahead Planner</h1>
+        <p1>Using SHACL framework</p1>
+    </div>
+
+    <div class="topnav">
+
+
+        <div class="dropdown">
+            <button class="dropbtn">File
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Open File</a>
+                <a href="#">Save file</a>
+
+            </div>
+        </div>
+
+        <a href=/api/gantt/>Gantt Chart View</a> <a href="/api/constrmodelr/">Constraint Modeller</a>
+        <a href="#">About</a>
+        <a href="#" style="float:right">Help</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="DropdownFunction()">&#9776;</a>
+    </div>
+    <script>
+        function DropdownFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    <div class="row">
+        <div class="col-container">
+            <div class="col">
+                <!--Gantt Chart-->
+                
+                    <div class="card">
+                        <h2>Gantt Chart</h2>
+                        <p>Click on the gantt chart blocks for information</p>
+                        <div class="scrollprop">
+                        <div class="chart" id="Chart" style="width: 100%">
+                            <script>
+                                $(function () { CreateChart(); })
+                            </script>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!--Console output-->
+
+            </div>
+
+            <div class="col">
+                <!--BIM output-- Depreciated 
+                <div class="card">
+                    <h2>Model</h2>
+                    <div>
+                        <p><canvas id="viewer" style="width:100%;" height="400"></canvas></p>
+
+                        <script type="text/javascript" src="/static/JavaScript/xbim-viewer.debug.bundle.js"></script>
+
+                        <script type="text/javascript">
+                            var viewer = new xViewer('viewer');
+                            viewer.load('/static/data/SampleHouse.wexbim');
+                            viewer.start();
+                        </script>
+
+
+                    </div>
+
+                </div> -->
+
+
+                <!--Resources-->
+                <div class="card">
+                    <h3>Details</h3>
+
+                    <div id=" Connection" class="scrollprop">
+
+
+
+
+                        <table id="activitieseshtml" class="ui-widget ui-widget-content">
+
+                            <thead>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                       
+
+                    </div>
+                    <button id="SetActiveButton" class="button button5">Set Active</button>
+                    <button id="ShowSourceButton" class="button button5">Show source</button>
+                    
+                </div>
+
+
+                <!--Resources-->
+                <div class="card">
+                    <h3>Resources</h3>
+
+                    <div id="ResourceCard" class="scrollprop">
+
+
+
+
+                        <table id="resourceshtml" class="ui-widget ui-widget-content">
+
+                            <thead>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <!-- AddResourceForm Function defenition inside AddResource.js-->
+
+                    </div>
+                    <button id="AddResourceButton" class="button button5">Add resource</button>
+                    
+                </div>
+                <!--Constraints-->
+                <div class="card">
+                    <h3>Constraints</h3>
+                    <div id="ConstraintCard" class="scrollprop">
+                        <table id="constraintshtml">
+
+                            <thead>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button id="AddConstraintButton" class="button button5">Add Constraint</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+
+        <h2>Optimise</h2>
+        <div class="card">
+            <h2>Console Output</h2>
+
+            <div class="fakeimg" style="height:200px;">Image</div>
+
+        </div>
+
+    </div>
+    <!--To remove-->
+
+
+    <!-- OnCLickForm Function defenition inside OnCLick.js-->
+    <div id="Resourcesdialog" style="display: none" align="center">
+        <h1>Resources Assigned:</h1>
+        <table id="resourceshtml">
+
+            <thead>
+
+            </thead>
+            <tbody>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <!-- AddResourceForm Function defenition inside AddResource.js-->
+        <h1>Add Resources:</h1>
+        <form>
+            <fieldset>
+                <span>
+                    <label for="name">Name</label>
+                    <input type="text" ResourceTypee="name" id="ResourceName" value="crane">
+                    <label for="ResourceType">Type</label>
+                    <select id="ResourceType" type="resource">
+                        <option value="crane">crane</option>
+                        <option value="module">module</option>
+                    </select>
+                </span>
+            </fieldset>
+        </form>
+    </div>
+
+
+    <!--Add property  form-->
+    <div id="AddResourceform" style="display: none" align="center">
+        <form>
+            <fieldset>
+                <label id="PropType" for="name">Property</label>
+                <input type="text" name="property" id="ResourceProperty" value="500" class="text ui-widget-content ui-corner-all">
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
+        </form>
+    </div>
+
+    <!--Add constraint  form-->
+    <div id="AddConstraintform" style="display: none" align="center">
+        <form>
+            <fieldset>
+                <span>
+                    <select id="ResourceTypeLHS" type="resource">
+                        <option value="crane capacity">crane capacity</option>
+                        <option value="module weight">module weight </option>
+                    </select>
+                    <select id="Condition" type="resource">
+                        <option value="Less than">Less than</option>
+                        <option value="More than">More than</option>
+                    </select>
+                    <select id="ResourceTypeRHS" type="resource">
+                        <option value="crane capacity">crane capacity</option>
+                        <option value="module weight">module weight</option>
+                    </select>
+                </span>
+            </fieldset>
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>

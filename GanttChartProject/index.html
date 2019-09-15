@@ -1,0 +1,108 @@
+<html>
+
+<head>
+  <title>Constraint Modelling and Validation</title>
+
+  <link rel="stylesheet" type="text/css" href="/static/CSS/style1.css">
+  <link rel="stylesheet" href="/static/CSS/jquery-ui.css">
+  <link rel="stylesheet" href="/static/CSS/style.css">
+  <link rel="stylesheet" href="/static/CSS/style3.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script type="text/javascript" src="/static/JavaScript/AddResource.js"></script>
+  <script type="text/javascript" src="/static/JavaScript/OnClick.js"></script>
+  <script type="text/javascript" src="/static/JavaScript/ganttChart.js"></script>
+  <script type="text/javascript" src="/static/JavaScript/main_app.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Model constraints</h1>
+  <br>
+  <button onclick="AddConstraint()">Click to add constraints</button>
+  <!--Function defenition inside  Addresource.js  -->
+  <br>
+  <br>
+  <h1>Gantt chart</h1>
+
+  <!-- Gantt chart-->
+  <div class="chart" id="Chart" style="width: 100%"></div>
+  <script>
+    $(function () { CreateChart(); })
+  </script>
+
+
+
+  <!-- OnCLickForm Function defenition inside OnCLick.js-->
+  <div id="Resourcesdialog" style="display: none" align="center">
+    <h1>Resources Assigned:</h1>
+    <table id="resourceshtml" class="ui-widget ui-widget-content">
+      <thead>
+        
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <!-- AddResourceForm Function defenition inside AddResource.js-->
+    <h1>Add Resources:</h1>
+    <form>
+      <fieldset>
+        <span>
+          <label for="name">Name</label>
+          <input type="text" ResourceTypee="name" id="ResourceName" value="crane">
+          <label for="ResourceType">Type</label>
+          <select id="ResourceType" type="resource">
+            <option value="crane">crane</option>
+            <option value="module">module</option>
+          </select>
+        </span>
+      </fieldset>
+    </form>
+  </div>
+
+
+  <!--Add property  form-->
+  <div id="AddResourceform" style="display: none" align="center">
+    <form>
+      <fieldset>
+        <label id="PropType" for="name">Property</label>
+        <input type="text" name="property" id="ResourceProperty" value="500" class="text ui-widget-content ui-corner-all">
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+      </fieldset>
+    </form>
+  </div>
+
+  <!--Add constraint  form-->
+  <div id="AddConstraintform" style="display: none" align="center">
+    <form>
+      <fieldset>
+        <span>
+          <select id="ResourceTypeLHS" type="resource">
+            <option value="crane capacity">crane capacity</option>
+            <option value="module weight">module weight </option>
+          </select>
+          <select id="Condition" type="resource">
+            <option value="Less than">Less than</option>
+            <option value="More than">More than</option>
+          </select>
+          <select id="ResourceTypeRHS" type="resource">
+            <option value="crane capacity">crane capacity</option>
+            <option value="module weight">module weight</option>
+          </select>
+        </span>
+      </fieldset>
+    </form>
+  </div>
+
+
+</body>
+
+</html>

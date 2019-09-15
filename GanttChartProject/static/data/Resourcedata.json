@@ -1,0 +1,201 @@
+[
+    {
+        "Resource_ID": "Cr1",
+        "Resource_Type": "Crane",
+        "Resource Property": {
+            "Maximum unsupported height(m)": "80",
+            "Maximum reach (m)": "70",
+            "Maximum lifting power (metric tons)": "18",
+            "Counter weights (metric tons)": "16.3"
+        },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "Cr2",
+        "Resource_Type": "Crane",
+        "Resource Property": {
+            "Maximum unsupported height(m)": "80",
+            "Maximum reach (m)": "50",
+            "Maximum lifting power (metric tons)": "15",
+            "Counter weights (metric tons)": "12.3"
+        },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "Cr3",
+        "Resource_Type": "Crane",
+        "Resource Property": {
+            "Maximum unsupported height(m)": "80",
+            "Maximum reach (m)": "40",
+            "Maximum lifting power (metric tons)": "20",
+            "Counter weights (metric tons)": "17.6"
+        },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M1",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 19,
+            "Length (m)": 3,
+            "Breadth (m)": 3,
+            "Height (m)": 3
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M2",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 16,
+            "Length (m)": 4,
+            "Breadth (m)": 4,
+            "Height (m)": 5
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M3",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 19,
+            "Length (m)": 3,
+            "Breadth (m)": 2,
+            "Height (m)": 5
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M4",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 17,
+            "Length (m)": 4,
+            "Breadth (m)": 2,
+            "Height (m)": 6
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M5",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 16,
+            "Length (m)": 3,
+            "Breadth (m)": 2,
+            "Height (m)": 5
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M6",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 15,
+            "Length (m)": 2,
+            "Breadth (m)": 2,
+            "Height (m)": 4
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M7",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 17,
+            "Length (m)": 3,
+            "Breadth (m)": 4,
+            "Height (m)": 6
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M8",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 13,
+            "Length (m)": 2,
+            "Breadth (m)": 2,
+            "Height (m)": 5
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M9",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 16,
+            "Length (m)": 4,
+            "Breadth (m)": 5,
+            "Height (m)": 6
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M10",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 16,
+            "Length (m)": 3,
+            "Breadth (m)": 3,
+            "Height (m)": 5
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M11",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 13,
+            "Length (m)": 6,
+            "Breadth (m)": 3,
+            "Height (m)": 5
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "M12",
+        "Resource_Type": "Module",
+        "Resource Property": {
+            "Module weight (metric ton)": 17,
+            "Length (m)": 7,
+            "Breadth (m)": 3,
+            "Height (m)": 3
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "LD1",
+        "Resource_Type": "Laydown Area",
+        "Resource Property": {
+           "capacity" : "5"
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    },
+    {
+        "Resource_ID": "LD2",
+        "Resource_Type": "Laydown Area",
+        "Resource Property":  {
+           
+            "capacity" : "3"
+          },
+        "Assignment Start": "",
+        "Assignment End": ""
+    }
+]
