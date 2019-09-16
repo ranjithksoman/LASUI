@@ -22,107 +22,69 @@ export class GanttchartComponent implements OnInit {
 
 
 
-  public constructor(private zone: NgZone, private router: Router) {
+constructor(public httpclient: HttpClient) {    }
 
-    //exposing component to the outside here
-    //componentFn called from outside and it in return calls callExampleFunction()
-    window['angularComponentReference'] = {
-      zone: this.zone,
-      componentFn: (value) => this.callExampleFunction(),
-      component: this,
-    };
-  }
-
-  callExampleFunction(): any {
+  public callExampleFunction(): any {
     console.log('this works perfect');
-  }
-  onSelect(task: Task): void {
-    this.selectedTask = task;
-    console.log(this.selectedTask.title)
+    console.log(this.selectedTask.id)
   }
 
-  public ontheeventofclick() {
-    console.log("click registered")
-  }
+
   ngOnInit() {
-    this.test();
+    this.get_gantchartdata();
+
   }
 
 
-  ngOnDestroy() {
-    window['angularComponentRef'] = null;
+
+
+
+  public get_gantchartdata()
+  {
+    this.httpclient.get("http://127.0.0.1:5000/api/data/").subscribe(data=>{
+      console.log(data);
+      this.CreateGanttChart(data,this);
+    });
+
+
   }
+  public CreateGanttChart(data1,component) {
+        console.log(data1);
+        var config = {
+          data: data1, // Your actuall data
+          element: "#Chart", // The element for rendering the chart
+          box_padding: 15, // Padding for the blocks
+          // metrics: {type: "overall", years: [2016, 2017, 2018,2019]}, // Type of gantt
+          //metrics: {type: "sprint", year: 2017, cycles: cycles}, // Type of gantt
+          //metrics: {type: "yearly", year: 2017}, // Type of gantt
+          metrics: { type: "monthly", month: 'August 2018' }, // For Monthly Data
+          // metrics: {type: "quarterly", months: ['January 2017','February 2017','March 2017', 'April 2017', 'May 2017', 'June 2017']}, // For quarterly or half yearly data
+          onClick: function (data) {
 
-  test() {
-    var HttpClient = function () {
-      this.get = function (aUrl, aCallback) {
-        var anHttpRequest = new XMLHttpRequest();
-        anHttpRequest.onreadystatechange = function () {
-          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200) {
-            aCallback(anHttpRequest.responseText);
-            const flag = false;
-          }
-        }
-        anHttpRequest.open("GET", aUrl, true);
-        anHttpRequest.send(null);
-      }
-    }
-
-    function CreateGanttChart(data1) {
-      console.log(data1);
-      var config = {
-        data: data1, // Your actuall data
-        element: "#Chart", // The element for rendering the chart
-        box_padding: 15, // Padding for the blocks
-        // metrics: {type: "overall", years: [2016, 2017, 2018,2019]}, // Type of gantt
-        //metrics: {type: "sprint", year: 2017, cycles: cycles}, // Type of gantt
-        //metrics: {type: "yearly", year: 2017}, // Type of gantt
-        metrics: { type: "monthly", month: 'August 2018' }, // For Monthly Data
-        // metrics: {type: "quarterly", months: ['January 2017','February 2017','March 2017', 'April 2017', 'May 2017', 'June 2017']}, // For quarterly or half yearly data
-        onClick: function (data) {
-          console.log("Clicked on tab");
-          console.log(data);
-          for (let task of Taskdetails) {
-            if (data.id == task.id) {
-              this.selectedTask = task;
-              window.angularComponentReference.zone.run(() ={ window.angularComponentReference.componentFn(); });
-
-
-              console.log(this.selectedTask.title)
-
-
+            //this.callExampleFunction();
+            console.log("Clicked on tab");
+            console.log(data);
+            for (let task of Taskdetails) {
+              if (data.id == task.id) {
+                component.selectedTask = task;
+                component.callExampleFunction();
+                console.log(component.selectedTask.title)
+              }
             }
+          },
+          onEmptyButtonClick: function () {
+            console.log("Empty Clicked");
+          },
+          onAreaClick: function (location) {
+            console.log("Clicked On" + location);
           }
-        },
-        onEmptyButtonClick: function () {
-          console.log("Empty Clicked");
-        },
-        onAreaClick: function (location) {
-          console.log("Clicked On" + location);
         }
+        console.log("config:" + config);
+
+        mainapp(config);
       }
-      console.log("config:" + config);
 
-      mainapp(config);
-    }
 
-    // Browser global variables data,cycle, config
-    function CreateChart() {
-      console.log("Entered create chart function ");
-      var data;
-      var client = new HttpClient();
-      console.log("Waiting for data");
-
-      $.get("http://127.0.0.1:5000/api/data/", function (data) {
-
-        console.log("Load was performed.");
-        var data1 = JSON.parse(data);
-        CreateGanttChart(data1);
-      });
-    }
-
-    CreateChart();
-  }
 
 
 }
