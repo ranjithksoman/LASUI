@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
-import {Task} from '../task';
-import {Taskdetails} from '../taskdet';
+import { Task } from '../task';
+import { Taskdetails } from '../taskdet';
+import { Router } from '@angular/router';
+declare const window: any;
 
 declare const mainapp: any;
 declare const startapp: any;
@@ -12,13 +14,46 @@ declare const startapp: any;
   styleUrls: ['./ganttchart.component.css']
 })
 export class GanttchartComponent implements OnInit {
-  public tasks=Taskdetails;
+  public tasks = Taskdetails;
   gantttitle = 'GanttChart'
   private data;
-  constructor(private httpClient: HttpClient) { }
+  Tasks = Taskdetails;
   selectedTask: Task;
-  ngOnInit() {
 
+
+
+  public constructor(private zone: NgZone, private router: Router) {
+
+    //exposing component to the outside here
+    //componentFn called from outside and it in return calls callExampleFunction()
+    window['angularComponentReference'] = {
+      zone: this.zone,
+      componentFn: (value) => this.callExampleFunction(),
+      component: this,
+    };
+  }
+
+  callExampleFunction(): any {
+    console.log('this works perfect');
+  }
+  onSelect(task: Task): void {
+    this.selectedTask = task;
+    console.log(this.selectedTask.title)
+  }
+
+  public ontheeventofclick() {
+    console.log("click registered")
+  }
+  ngOnInit() {
+    this.test();
+  }
+
+
+  ngOnDestroy() {
+    window['angularComponentRef'] = null;
+  }
+
+  test() {
     var HttpClient = function () {
       this.get = function (aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
@@ -47,13 +82,15 @@ export class GanttchartComponent implements OnInit {
         onClick: function (data) {
           console.log("Clicked on tab");
           console.log(data);
-          
-          for (let task of Taskdetails)
-          {
-            if (data.id==task.id)
-            {
-              this.selectedTask=task;
+          for (let task of Taskdetails) {
+            if (data.id == task.id) {
+              this.selectedTask = task;
+              window.angularComponentReference.zone.run(() ={ window.angularComponentReference.componentFn(); });
+
+
               console.log(this.selectedTask.title)
+
+
             }
           }
         },
@@ -85,8 +122,6 @@ export class GanttchartComponent implements OnInit {
     }
 
     CreateChart();
-
-
   }
 
 
