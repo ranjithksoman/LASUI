@@ -2,9 +2,27 @@
   <h1>{{title}}</h1>
 </div>
 <div class="topnav">
-  <p>placeholder for top nav</p>
+  <div class="dropdown">
+    <button class="dropbtn">File
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Open File</a>
+      <a href="#">Save file</a>
+
+    </div>
+  </div>
+
+  <a href="#">Gantt Chart View</a>
+  <a href="#">Resources</a>
+  <a href="#">Constraints</a>
+  <a href="#">About</a>
+  <a href="#" style="float:right">Help</a>
+  <!--<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="DropdownFunction()">&#9776;</a>-->
 </div>
+
+
 <div class="row">
-    <app-ganttchart></app-ganttchart>
-  
+  <app-ganttchart></app-ganttchart>
+
 </div>

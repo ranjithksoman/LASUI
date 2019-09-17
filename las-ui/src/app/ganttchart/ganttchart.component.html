@@ -1,47 +1,98 @@
 <div class="col-container">
 
     <div class="col">
-        <p>Left column</p>
+
         <div class="card">
-            <p>placeholder for gantt chart</p>
+
             <div class="chart" id="Chart" style="width: 100%"> </div>
 
 
         </div>
     </div>
     <div class="col">
-        <p>Right column</p>
+
         <div class="card">
+            <h2>Task Details</h2>
+            <div *ngIf="selectedTask; else notShow">
 
-
-            <h2>My Tasks</h2>
-            <ul>
-                <li *ngFor="let task of Tasks" [class.selected]="task === selectedTask" (click)="onSelect(task)">
-                    <span class="badge">{{task.id}}</span> {{task.title}}
-                </li>
-            </ul>
-            <div *ngIf="selectedTask">
-                <h2>{{selectedTask.title | uppercase}} Details</h2>
-                <div><span>id: </span>{{selectedTask.id}}</div>
                 <div>
-                    <label>name:
-                        <input [(ngModel)]="selectedTask.name" placeholder="name" />
-                    </label>
+                    <span>id: </span><span>{{selectedTask.id}}</span>
+                    <span> Name: </span><span>{{selectedTask.title}}</span>
+                </div>
+                <div>
+                    <span>Sub-Activities </span><span><button>Refresh</button></span>
+                </div>
+                <div>
+                    <button (click)="onClickValidate()">Validate Task</button> <span>{{validationstatus}}</span>
                 </div>
             </div>
-            <!--
-                <div *ngIf="selectedTask">
-                    <p>placeholder for tabs</p>
-                    <h2>{{selectedTask.title | uppercase}} Details</h2>
-                    <div><span>id: </span>{{selectedTask.id}}</div>
-                    <div>
-                        <label>name:
-                            <input [(ngModel)]="selectedTask.title" placeholder="name" />
-                        </label>
-                    </div>
-                </div>
-                -->
+            <ng-template #notShow>
+                <p>
+                    Select a task to display details here
+                </p>
+            </ng-template>
+
         </div>
+        <div class="card">
+            <h2>Resource Details</h2>
+            <div *ngIf="selectedTask; else notShow">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Property Value</th>
+                        <th>Server</th>
+                    </tr>
+
+                    <tr *ngFor="let resource of selectedTask.Resource">
+                        <td>{{resource.id}}</td>
+                        <td>{{resource.type}}</td>
+                        <td>{{resource.propertyvalue}}</td>
+                        <td>{{resource.server}}</td>
+                    </tr>
+
+                </table>
+                <button type="button">Add resource</button>
+            </div>
+            <ng-template #notShow>
+                <p>
+                    Select a task to display details here
+                </p>
+            </ng-template>
+
+        </div>
+        <div class="card">
+            <h2>Constraint Details</h2>
+            <div *ngIf="selectedTask; else notShow">
+
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+
+                    </tr>
+
+                    <tr *ngFor="let constraint of selectedTask.Constraint">
+                        <td>{{constraint.id}}</td>
+                        <td>{{constraint.type}}</td>
+                    </tr>
+
+                </table>
+                <button (click)="onClickConstraint()">Add constraint</button>
+            </div>
+            <ng-template #notShow>
+                <p>
+                    Select a task to display details here
+                </p>
+            </ng-template>
+
+        </div>
+        <div *ngIf="onaddconstraint" class="card">
+            <app-tasks [task] = "selectedTask"></app-tasks>
+
+
+        </div>
+
 
     </div>
 

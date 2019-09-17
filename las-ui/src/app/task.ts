@@ -2,6 +2,20 @@ export class Task {
 
     id: number;
     title: string;
-    Resource : string[];
-    Constraint : string[];
+    Resource : Resource [];
+    Constraint : Constraint[];
+}
+export class Resource{
+    id : string;
+    type : string;
+    propertytype: string;
+    propertyvalue: Number;
+    server: string;
+
+}
+export class Constraint {
+    id : string;
+    type : string;
+    
+    
 }

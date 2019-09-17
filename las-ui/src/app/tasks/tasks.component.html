@@ -1,11 +1,46 @@
-<div *ngIf="Task">
+<div *ngIf="task">
 
-    <h2>{{Task.title | uppercase}} Details</h2>
-    <div><span>id: </span>{{Task.id}}</div>
+    <h2>Add Constraint</h2>
+    
     <div>
       <label>name:
-        <input [(ngModel)]="Task.title" placeholder="name"/>
+        <input [(ngModel)]="constraintname" placeholder="name"/>
       </label>
     </div>
-  
+ <div>
+    <select>
+        <option *ngFor= "let x of constrainttypes">{{x}}</option>
+        </select>
+      <span>
+          <select>
+          <option *ngFor= "let x of resourcetypess">{{x}}</option>
+          </select>
+          
+      </span>
+      <span>
+          <select>
+          <option *ngFor= "let x of propertytypess">{{x}}</option>
+          </select>
+          
+      </span>
+      <span>
+          <select>
+          <option *ngFor= "let x of operators">{{x}}</option>
+          </select>
+          
+      </span>
+      <span>
+          <select>
+          <option *ngFor= "let x of resourcetypess">{{x}}</option>
+          </select>
+          
+      </span>
+      <span>
+          <select>
+          <option *ngFor= "let x of propertytypess">{{x}}</option>
+          </select>
+          
+      </span>
+      </div>
+      <button (click)="onSave()">Save Constraint</button>
   </div>
