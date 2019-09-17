@@ -23,7 +23,7 @@ constraintname:string;
 
   onSave()
   {
-    var  Cns:Constraint = {id: 'C4',
+    var  Cns:Constraint = {id: 'C10',
       type: 'Logical'};
       this.task.Constraint.push(Cns);
               
