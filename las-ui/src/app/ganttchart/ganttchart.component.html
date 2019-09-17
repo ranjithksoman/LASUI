@@ -20,7 +20,26 @@
                     <span> Name: </span><span>{{selectedTask.title}}</span>
                 </div>
                 <div>
-                    <span>Sub-Activities </span><span><button>Refresh</button></span>
+                    <span>Sub-Activities </span><span><button (click)="onRefreshclick()">Refresh</button></span>
+                </div>
+                <div *ngIf="onRefresh">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Sub Activities</th>
+
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Truck 1 Movement</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Truck 2 Movement</td>
+                        </tr>
+                    </table>
+
+
                 </div>
                 <div>
                     <button (click)="onClickValidate()">Validate Task</button> <span>{{validationstatus}}</span>
@@ -88,7 +107,7 @@
 
         </div>
         <div *ngIf="onaddconstraint" class="card">
-            <app-tasks [task] = "selectedTask"></app-tasks>
+            <app-tasks [task]="selectedTask"></app-tasks>
 
 
         </div>

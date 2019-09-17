@@ -24,7 +24,7 @@ export class GanttchartComponent implements OnInit {
   selectedTask: Task;
   validationstatus: string;
   onaddconstraint: boolean;
-
+onRefresh:boolean;
 
 
   constructor(public httpclient: HttpClient) { }
@@ -41,6 +41,14 @@ export class GanttchartComponent implements OnInit {
   ngOnInit() {
     this.get_gantchartdata();
     this.validationstatus = 'Not validated';
+    this.onRefresh=false;
+
+  }
+
+  onRefreshclick()
+  {
+    console.log("refresh button clicked");
+    this.onRefresh=true;
 
   }
   onClickValidate() {
