@@ -4,6 +4,7 @@ export class Task {
     title: string;
     Resource : Resource [];
     Constraint : Constraint[];
+    Subactivities : string[];
 }
 export class Resource{
     id : string;
@@ -16,6 +17,6 @@ export class Resource{
 export class Constraint {
     id : string;
     type : string;
-    
-    
+
+
 }

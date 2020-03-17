@@ -67,6 +67,7 @@ onRefresh:boolean;
 
     if (cranevalue < moduleweight) {
       this.validationstatus = 'Validation failure';
+      alert("Subtask S2:  Logical constraint violation at R4, Discrete constraint violation at R2, Discrete constraint violation at R4, Disjunctive constraint violation at O2 ")
     }
     else {
       this.validationstatus = 'validation success';
@@ -95,13 +96,14 @@ onRefresh:boolean;
       // metrics: {type: "overall", years: [2016, 2017, 2018,2019]}, // Type of gantt
       //metrics: {type: "sprint", year: 2017, cycles: cycles}, // Type of gantt
       //metrics: {type: "yearly", year: 2017}, // Type of gantt
-      metrics: { type: "monthly", month: 'August 2018' }, // For Monthly Data
-      // metrics: {type: "quarterly", months: ['January 2017','February 2017','March 2017', 'April 2017', 'May 2017', 'June 2017']}, // For quarterly or half yearly data
+      //metrics: { type: "monthly", month: 'April 2019' }, // For Monthly Data
+       metrics: {type: "quarterly", months: ['February 2019','March 2019', 'April 2019']}, // For quarterly or half yearly data
       onClick: function (data) {
 
         //this.callExampleFunction();
         console.log("Clicked on tab");
         console.log(data);
+        console.log(data.id);
         for (let task of Taskdetails) {
           if (data.id == task.id) {
             component.selectedTask = task;

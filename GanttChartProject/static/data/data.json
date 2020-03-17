@@ -1,77 +1,99 @@
-[
-    {
-       "id": 1,
-       "title": "Lift 1",
-       "start_date": "08/08/2018",
-       "end_date": "08/13/2018",
-       "value": 67,
-       "term": "Short Term",
-       "completion_percentage": 29,
-       "color": "#770051",
-       "testvar": "test",
-       "Resource": [
-          {
-             "Resource_type": "Resource type value",
-             "Resource_id": "Resource ID value",
-             "Resource_property": [
-                {
-                   "Resource_property_type": "Resource_property_type_value"
-                }
-             ]
-          },
-          {
-             "Resource_type": "Resource type value2",
-             "Resource_id": "Resource ID value2",
-             "Resource_property": [
-                {
-                   "Resource_property_type": "Resource_property_type_value"
-                }
-             ]
-          }
-       ]
+[{
+        "id": 1,
+        "title": "Phase 1 (WTP/STP)",
+        "start_date": "01/14/2019",
+        "end_date": "07/01/2019",
+        "value": 0,
+        "term": "Short Term",
+        "completion_percentage": 29,
+        "color": "#770051",
+        "testvar": "test",
+        "Resource": [{
+                "Resource_type": "Resource type value",
+                "Resource_id": "Resource ID value",
+                "Resource_property": [{
+                    "Resource_property_type": "Resource_property_type_value"
+                }]
+            },
+            {
+                "Resource_type": "Resource type value2",
+                "Resource_id": "Resource ID value2",
+                "Resource_property": [{
+                    "Resource_property_type": "Resource_property_type_value"
+                }]
+            }
+        ]
     },
     {
-       "id": 2,
-       "title": "Lift 2",
-       "start_date": "08/12/2018",
-       "end_date": "08/18/2018",
-       "value": 67,
-       "term": "Short Term",
-       "completion_percentage": 29,
-       "color": "#05f20c",
-       "testvar": "test",
-       "Resource": [
-          {
-             "Resource_type": "Resource type value",
-             "Resource_id": "Resource ID value",
-             "Resource_property": [
-                {
-                   "Resource_property_type": "Resource_property_type_value"
-                }
-             ]
-          }
-       ]
+        "id": 2,
+        "title": "BIN A",
+        "start_date": "04/02/2019",
+        "end_date": "06/24/2019",
+        "value": 67,
+        "term": "Short Term",
+        "completion_percentage": 29,
+        "color": "#05f20c",
+        "testvar": "test",
+        "Resource": [{
+            "Resource_type": "Resource type value",
+            "Resource_id": "Resource ID value",
+            "Resource_property": [{
+                "Resource_property_type": "Resource_property_type_value"
+            }]
+        }]
     },
     {
-       "title": "Lift 3",
-       "start_date": "08/18/2018",
-       "id": 3,
-       "end_date": "08/30/2018",
-       "value": 67,
-       "term": "Short Term",
-       "completion_percentage": 29,
-       "color": "#914ae1",
-       "testvar": "test",
-       "Resource": [
-          {
-             "Resource_type": "Resource type value",
-             "Resource_id": "Resource ID value",
-             "Resource_property": [
-                {
-                   "Resource_property_type": "Resource_property_type_value"
-                }
-             ]
-          }
-       ]
+        "title": "BIN B",
+        "start_date": "02/13/2019",
+        "id": 3,
+        "end_date": "06/10/2019",
+        "value": 67,
+        "term": "Short Term",
+        "completion_percentage": 29,
+        "color": "#914ae1",
+        "testvar": "test",
+        "Resource": [{
+            "Resource_type": "Resource type value",
+            "Resource_id": "Resource ID value",
+            "Resource_property": [{
+                "Resource_property_type": "Resource_property_type_value"
+            }]
+        }]
+    },
+    {
+        "title": "BIN C",
+        "start_date": "02/27/2019",
+        "id": 3,
+        "end_date": "06/20/2019",
+        "value": 67,
+        "term": "Short Term",
+        "completion_percentage": 29,
+        "color": "#914ae1",
+        "testvar": "test",
+        "Resource": [{
+            "Resource_type": "Resource type value",
+            "Resource_id": "Resource ID value",
+            "Resource_property": [{
+                "Resource_property_type": "Resource_property_type_value"
+            }]
+        }]
+    },
+    {
+        "title": "Piling Platform",
+        "start_date": "11/13/2018",
+        "id": 3,
+        "end_date": "04/23/2019",
+        "value": 67,
+        "term": "Short Term",
+        "completion_percentage": 29,
+        "color": "#914ae1",
+        "testvar": "test",
+        "Resource": [{
+            "Resource_type": "Resource type value",
+            "Resource_id": "Resource ID value",
+            "Resource_property": [{
+                "Resource_property_type": "Resource_property_type_value"
+            }]
+        }]
     }
- ]
+]

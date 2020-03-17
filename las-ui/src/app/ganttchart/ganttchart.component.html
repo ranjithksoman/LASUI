@@ -16,28 +16,27 @@
             <div *ngIf="selectedTask; else notShow">
 
                 <div>
-                    <span>id: </span><span>{{selectedTask.id}}</span>
+                    <span>id:</span><span>{{selectedTask.id}}</span>
                     <span> Name: </span><span>{{selectedTask.title}}</span>
                 </div>
                 <div>
                     <span>Sub-Activities </span><span><button (click)="onRefreshclick()">Refresh</button></span>
                 </div>
                 <div *ngIf="onRefresh">
-                    <table>
-                        <tr>
-                            <th>ID</th>
-                            <th>Sub Activities</th>
+                    <div *ngIf="selectedTask; else notShow">
 
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Truck 1 Movement</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Truck 2 Movement</td>
-                        </tr>
-                    </table>
+                        <table>
+                            <tr>
+                                <th>SubActivities</th>
+                            </tr>
+
+                            <tr *ngFor="let subactivity of selectedTask.Subactivities">
+
+                                <td>{{subactivity}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
 
 
                 </div>
